@@ -1,0 +1,548 @@
+<title>Dr. Stefano Saran — Ortodontista specialista a Milano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#122a43;
+    --blue:#2f6690;
+    --blue-deep:#1c4a6e;
+    --blue-bg:#eef4f9;
+    --gray-900:#1f2933;
+    --gray-700:#3e4c59;
+    --gray-500:#7b8794;
+    --gray-300:#d9e2ec;
+    --gray-100:#f5f7fa;
+    --white:#ffffff;
+    --line:#e4e9ef;
+    --radius:14px;
+    --shadow:0 10px 30px -12px rgba(18,42,67,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--gray-900);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 .5em;
+    line-height:1.2;
+    text-wrap:balance;
+  }
+  a:focus-visible,button:focus-visible,.btn:focus-visible,summary:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .btn{transition:none;}
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .kicker{
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:.9em;
+    display:block;
+  }
+  section{padding:88px 0;}
+  .section--tight{padding:72px 0;}
+  .section--blue{background:var(--blue-bg);}
+  .section--gray{background:var(--gray-100);}
+  .section--navy{background:var(--navy);color:#dce8f3;}
+  .section--navy h2{color:var(--white);}
+  .center{text-align:center;}
+  .lede{
+    font-size:1.08rem;
+    color:var(--gray-700);
+    max-width:640px;
+  }
+  .center .lede{margin-left:auto;margin-right:auto;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1120px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Fraunces',serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--navy);
+    white-space:nowrap;
+  }
+  .brand span{color:var(--blue);}
+  .nav-links{
+    display:flex;gap:28px;
+    font-size:.92rem;
+    font-weight:500;
+    color:var(--gray-700);
+  }
+  .nav-links a:hover{color:var(--blue);}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.92rem;
+    white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:var(--blue-deep);
+    color:var(--white);
+    box-shadow:0 8px 20px -8px rgba(28,74,110,0.55);
+  }
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(28,74,110,0.65);}
+  .btn-ghost{
+    border:1.5px solid var(--gray-300);
+    color:var(--navy);
+  }
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+  .btn-sm{padding:9px 18px;font-size:.85rem;}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-cta .btn{padding:11px 20px;font-size:.85rem;}
+
+  /* HERO */
+  .hero{padding:76px 0 90px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{font-size:2.6rem;letter-spacing:-.01em;}
+  .hero .subhead{
+    font-size:1.2rem;
+    color:var(--blue-deep);
+    font-weight:500;
+    margin-bottom:.7em;
+  }
+  .hero p.lede{font-size:1.05rem;max-width:520px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px;}
+  .microcopy{font-size:.85rem;color:var(--gray-500);}
+  .microcopy .dot{margin:0 8px;color:var(--gray-300);}
+  .photo-placeholder{
+    background:linear-gradient(155deg,var(--blue-bg),var(--gray-100));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    aspect-ratio:4/5;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;color:var(--gray-500);
+    font-size:.85rem;padding:24px;
+    box-shadow:var(--shadow);
+  }
+  .photo-placeholder.wide{aspect-ratio:16/10;}
+  .photo-placeholder .ph-icon{
+    width:38px;height:38px;margin:0 auto 12px;color:var(--blue);opacity:.6;
+  }
+
+  /* FEATURE GRID */
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 24px;
+  }
+  .card .icon{
+    width:42px;height:42px;
+    border-radius:11px;
+    background:var(--blue-bg);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-deep);
+    margin-bottom:18px;
+  }
+  .card .icon svg{width:22px;height:22px;}
+  .card h3{font-size:1.05rem;margin-bottom:.4em;}
+  .card p{font-size:.92rem;color:var(--gray-700);margin-bottom:0;}
+  .card-cta{
+    display:inline-block;margin-top:14px;font-size:.85rem;
+    font-weight:600;color:var(--blue-deep);
+  }
+
+  /* APPROACH STEPS */
+  .steps-3{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    margin-top:48px;position:relative;
+  }
+  .step{position:relative;padding-top:8px;}
+  .step-num{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--blue-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:1rem;font-weight:600;
+    margin-bottom:18px;
+  }
+  .step h3{font-size:1.02rem;}
+  .step p{font-size:.92rem;color:var(--gray-700);}
+
+  /* PROCESS TIMELINE */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+  .tl-item{
+    background:var(--white);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px 20px;position:relative;
+  }
+  .tl-item .tl-num{
+    font-family:'Fraunces',serif;font-size:1.8rem;color:var(--blue-bg);
+    -webkit-text-stroke:1.5px var(--blue-deep);
+    margin-bottom:10px;display:block;
+  }
+  .tl-item h3{font-size:.98rem;margin-bottom:.35em;}
+  .tl-item p{font-size:.88rem;color:var(--gray-700);margin-bottom:0;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;}
+  .about-note{
+    font-size:.82rem;color:var(--gray-500);font-style:italic;
+    border-left:3px solid var(--blue-bg);padding-left:14px;margin-top:18px;
+  }
+
+  /* WHERE */
+  .where-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .where-list{list-style:none;padding:0;margin:22px 0 0;}
+  .where-list li{
+    display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);
+    font-size:.95rem;color:var(--gray-700);
+  }
+  .where-list li:last-child{border-bottom:none;}
+  .where-list svg{width:18px;height:18px;color:var(--blue-deep);flex-shrink:0;margin-top:2px;}
+  .map-placeholder{
+    background:var(--gray-100);border:1px solid var(--line);border-radius:var(--radius);
+    aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;
+    color:var(--gray-500);font-size:.85rem;text-align:center;padding:24px;
+    background-image:radial-gradient(circle at 30% 30%, var(--blue-bg) 0%, transparent 45%),
+                      radial-gradient(circle at 70% 70%, var(--blue-bg) 0%, transparent 45%);
+  }
+
+  /* FAQ */
+  .faq{max-width:780px;margin:48px auto 0;}
+  details{
+    border-bottom:1px solid var(--line);
+    padding:22px 4px;
+  }
+  details summary{
+    cursor:pointer;font-weight:600;color:var(--navy);
+    font-size:1rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:"+";font-size:1.4rem;color:var(--blue);font-weight:400;flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin:14px 0 0;color:var(--gray-700);font-size:.95rem;}
+
+  /* FINAL CTA */
+  .cta-final{text-align:center;padding:96px 0;}
+  .cta-final h2{color:var(--white);font-size:2.1rem;max-width:640px;margin-left:auto;margin-right:auto;}
+  .cta-final .lede{color:#b9cbdd;}
+  .contact-row{
+    display:flex;gap:32px;justify-content:center;flex-wrap:wrap;
+    margin-top:36px;font-size:.92rem;color:#cfe0ef;
+  }
+  .contact-row div{display:flex;align-items:center;gap:8px;}
+  .contact-row svg{width:16px;height:16px;opacity:.85;}
+
+  footer{
+    background:var(--navy);color:#8fa8c0;
+    padding:28px 0;font-size:.82rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner{
+    max-width:1120px;margin:0 auto;padding:0 24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  .footer-inner a{opacity:.85;}
+  .footer-inner a:hover{opacity:1;color:#fff;}
+
+  @media (max-width:860px){
+    section{padding:64px 0;}
+    .hero{padding:44px 0 56px;}
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero h1{font-size:2.05rem;}
+    .nav-links{display:none;}
+    .grid-4{grid-template-columns:1fr 1fr;}
+    .grid-2{grid-template-columns:1fr;}
+    .steps-3{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr 1fr;}
+    .about-grid,.where-grid{grid-template-columns:1fr;gap:32px;}
+    .cta-final h2{font-size:1.6rem;}
+    .contact-row{flex-direction:column;align-items:center;gap:14px;}
+  }
+  @media (max-width:480px){
+    .grid-4{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr;}
+    .wrap{padding:0 18px;}
+  }
+</style>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Dr. Stefano Saran <span>· Ortodonzia</span></div>
+    <div class="nav-links">
+      <a href="#perche">Perché sceglierlo</a>
+      <a href="#trattamenti">Trattamenti</a>
+      <a href="#approccio">Approccio</a>
+      <a href="#dove">Dove ricevo</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contatti" class="btn btn-primary">Richiedi una visita</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Ortodonzia specialistica a Milano</span>
+      <h1>Dr. Stefano Saran<br>Ortodontista specialista a Milano</h1>
+      <p class="subhead">La terapia giusta parte dalla diagnosi, non dal tipo di apparecchio.</p>
+      <p class="lede">Allineatori trasparenti, apparecchio tradizionale, ortodonzia per adulti o per ragazzi: la scelta del trattamento nasce da un'analisi accurata del caso — non da una preferenza commerciale.</p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn btn-primary">Richiedi una prima visita</a>
+        <a href="#approccio" class="btn btn-ghost">Scopri l'approccio</a>
+      </div>
+      <p class="microcopy">Risposta personale entro 24–48 ore<span class="dot">•</span>Riceve a Milano su appuntamento</p>
+    </div>
+    <div class="photo-placeholder">
+      <div>
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        Foto professionale del Dr. Saran<br>— da inserire —
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="perche">
+  <div class="wrap">
+    <span class="kicker">Perché scegliere un ortodontista specialista</span>
+    <h2>Non un dentista che si occupa anche di ortodonzia.</h2>
+    <p class="lede">Stefano è specializzato in ortodonzia: il suo lavoro è studiare il movimento dei denti e la funzione della bocca, non semplicemente applicare un apparecchio.</p>
+    <div class="grid-4" style="margin-top:44px;">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
+        <h3>Formazione specialistica</h3>
+        <p>Percorso di specializzazione dedicato all'ortodonzia, non alla sola odontoiatria generale.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg></div>
+        <h3>Diagnosi prima della tecnica</h3>
+        <p>Ogni piano di trattamento nasce da un'analisi del caso, non da un listino di prodotti.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v5h-5"/></svg></div>
+        <h3>Aggiornamento continuo</h3>
+        <p>Formazione costante sulle tecniche più recenti, trasparenti e tradizionali.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L4 20l1.1-4.2A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
+        <h3>Ascolto e chiarezza</h3>
+        <p>Spiegazioni chiare su tempi, alternative e risultati attesi, senza pressione commerciale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trattamenti" class="section--blue">
+  <div class="wrap">
+    <span class="kicker">Aree di trattamento</span>
+    <h2>Un percorso su misura, qualunque sia la tecnica più adatta</h2>
+    <p class="lede">La tecnica giusta dipende dal caso: età, obiettivo, tipo di malocclusione, abitudini quotidiane.</p>
+    <div class="grid-4" style="margin-top:44px;">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="16" height="7" rx="3.5"/><path d="M4 9c0-2.5 3.5-4.5 8-4.5s8 2 8 4.5"/></svg></div>
+        <h3>Allineatori trasparenti</h3>
+        <p>Una soluzione discreta per chi cerca un trattamento efficace e poco visibile, quando il caso lo permette.</p>
+        <a href="#contatti" class="card-cta">Ne parliamo in visita →</a>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4v5M15 4v5M6 9h12l-1.2 9.5a2 2 0 0 1-2 1.7H9.2a2 2 0 0 1-2-1.7L6 9z"/></svg></div>
+        <h3>Apparecchio tradizionale</h3>
+        <p>Ancora oggi la scelta più indicata per molte situazioni complesse, con risultati affidabili.</p>
+        <a href="#contatti" class="card-cta">Ne parliamo in visita →</a>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7.5" r="3.2"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg></div>
+        <h3>Ortodonzia per adulti</h3>
+        <p>Non è mai troppo tardi: percorsi pensati per chi vuole intervenire in età adulta, compatibili con la vita di ogni giorno.</p>
+        <a href="#contatti" class="card-cta">Ne parliamo in visita →</a>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="2.6"/><circle cx="17" cy="8.5" r="2"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 19c.2-2.2 1.6-3.8 3.5-3.8s3.2 1.2 3.5 3"/></svg></div>
+        <h3>Ortodonzia per ragazzi</h3>
+        <p>Intercettare precocemente le problematiche per guidare la crescita nel modo corretto.</p>
+        <a href="#contatti" class="card-cta">Ne parliamo in visita →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approccio">
+  <div class="wrap center">
+    <span class="kicker">Il metodo</span>
+    <h2 style="max-width:640px;margin-left:auto;margin-right:auto;">La terapia giusta parte dalla diagnosi, non dal tipo di apparecchio</h2>
+    <p class="lede">Molti percorsi ortodontici partono al contrario: si sceglie prima il prodotto — gli allineatori, per esempio — e poi si adatta il caso a quella scelta. L'approccio di Stefano è diverso.</p>
+    <div class="steps-3">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Analisi del caso</h3>
+        <p>Visita, valutazione clinica e, quando serve, esami di approfondimento.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Obiettivo funzionale ed estetico</h3>
+        <p>Si definisce cosa serve ottenere: allineamento, funzione masticatoria, respirazione, estetica del sorriso.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Scelta della tecnica più adatta</h3>
+        <p>Solo a questo punto si individua lo strumento giusto: trasparente, fisso, o un percorso combinato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--gray">
+  <div class="wrap">
+    <span class="kicker">Come funziona</span>
+    <h2>Dalla prima visita al sorriso finito</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-num">01</span>
+        <h3>Prima visita conoscitiva</h3>
+        <p>Ascolto delle esigenze, visita orientativa e prima valutazione del caso.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">02</span>
+        <h3>Diagnosi e piano personalizzato</h3>
+        <p>Analisi approfondita e proposta di piano di trattamento, con tempi e alternative spiegati con chiarezza.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">03</span>
+        <h3>Scelta del trattamento</h3>
+        <p>Si decide insieme la tecnica più adatta, senza fretta.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-num">04</span>
+        <h3>Percorso e controlli</h3>
+        <p>Trattamento seguito con controlli regolari fino al risultato concordato.</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:44px;">
+      <a href="#contatti" class="btn btn-primary">Prenota la prima visita</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about-grid">
+    <div class="photo-placeholder">
+      <div>
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        Foto ritratto<br>— da inserire —
+      </div>
+    </div>
+    <div>
+      <span class="kicker">Chi è</span>
+      <h2>Dr. Stefano Saran</h2>
+      <p class="lede" style="max-width:100%;">Odontoiatra specializzato in Ortodonzia, esercita come libero professionista a Milano collaborando con studi partner selezionati per garantire ai pazienti standard clinici elevati e strumentazione aggiornata.</p>
+      <p class="lede" style="max-width:100%;">Il suo obiettivo è offrire una diagnosi accurata e un percorso di cura chiaro, scegliendo ogni volta la tecnica più adatta al singolo caso — senza soluzioni preconfezionate.</p>
+      <p class="about-note">* Sezione da completare con percorso formativo, università/specializzazione, anno di laurea e iscrizione all'Ordine — dati reali da inserire prima della pubblicazione.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dove" class="section--blue">
+  <div class="wrap where-grid">
+    <div>
+      <span class="kicker">Dove riceve</span>
+      <h2>Riceve a Milano, su appuntamento</h2>
+      <p class="lede" style="max-width:100%;">Stefano collabora con studi partner a Milano, selezionati per qualità clinica e attrezzature. Non avendo una sede fissa, gli appuntamenti vengono organizzati nella struttura più comoda per il paziente, tra le sedi disponibili.</p>
+      <ul class="where-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg> Sedi disponibili su richiesta</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Riceve su appuntamento, anche in orario serale</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v12H8l-4 4V4z"/></svg> Prima valutazione anche da remoto, su richiesta</li>
+      </ul>
+      <a href="#contatti" class="btn btn-primary" style="margin-top:28px;">Scopri le sedi disponibili</a>
+    </div>
+    <div class="map-placeholder">Mappa zone Milano<br>— indicativa, da definire —</div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap center">
+    <span class="kicker">Domande frequenti</span>
+    <h2>Le domande più comuni</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq">
+      <details open>
+        <summary>Qual è la differenza tra allineatori trasparenti e apparecchio fisso?</summary>
+        <p>Dipende dal tipo di caso: gli allineatori sono più discreti e rimovibili, l'apparecchio fisso resta spesso la scelta più efficace per le situazioni più complesse. Se ne parla in visita, dopo la diagnosi.</p>
+      </details>
+      <details>
+        <summary>A che età si può iniziare un percorso ortodontico?</summary>
+        <p>Non esiste un'unica età: alcune problematiche vanno intercettate da ragazzi, molte altre si affrontano tranquillamente da adulti.</p>
+      </details>
+      <details>
+        <summary>Non è mai troppo tardi per un trattamento da adulti?</summary>
+        <p>No. Una parte importante dei pazienti di Stefano sono adulti che iniziano un percorso ortodontico per la prima volta, con soluzioni pensate per la vita di tutti i giorni.</p>
+      </details>
+      <details>
+        <summary>Cosa succede durante la prima visita?</summary>
+        <p>Un colloquio conoscitivo, una valutazione clinica orientativa e la possibilità di capire, senza impegno, se e come procedere.</p>
+      </details>
+      <details>
+        <summary>Perché Stefano riceve in più sedi e non in uno studio fisso?</summary>
+        <p>Lavora come libero professionista specialista in studi partner selezionati a Milano: questo gli permette di garantire strumentazione aggiornata e di concentrarsi sulla parte clinica del percorso.</p>
+      </details>
+      <details>
+        <summary>Quanto costa un percorso ortodontico?</summary>
+        <p>Il costo dipende dal caso e dalla tecnica scelta: viene comunicato con chiarezza dopo la visita diagnostica, senza sorprese.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contatti" class="section--navy cta-final">
+  <div class="wrap">
+    <span class="kicker" style="color:#8fc4e8;">Il primo passo</span>
+    <h2>Parliamo del tuo caso</h2>
+    <p class="lede">La prima visita serve a capire, senza impegno, qual è il percorso più adatto a te.</p>
+    <a href="#" class="btn btn-primary" style="background:#fff;color:var(--navy);">Richiedi una prima visita</a>
+    <div class="contact-row">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1z"/></svg> [numero da inserire]</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg> [email da inserire]</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg> @[handle Instagram da definire]</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>Dr. Stefano Saran — Ortodontista specialista · Riceve a Milano su appuntamento</span>
+    <span><a href="#">P.IVA [da inserire]</a> · <a href="#">Privacy</a></span>
+  </div>
+</footer>
